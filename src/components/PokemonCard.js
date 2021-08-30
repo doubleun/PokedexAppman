@@ -2,6 +2,7 @@ import React from 'react'
 import styles from '../styles/Card.module.css'
 
 const PokemonCard = ({ card, addCard, removeCard, added }) => {
+  const arrCute = [];
   const handleAddCard = () => {
     addCard(card);
   }
@@ -45,6 +46,12 @@ const PokemonCard = ({ card, addCard, removeCard, added }) => {
   // console.log(cardStats.dmg)
   if(Number.isNaN(cardStats.hp)) cardStats.hp = 0;
 
+  // Calculate cuteness
+  const cutes = Math.round(Math.abs(((cardStats.hp/10) + (cardStats.dmg/10) + 10 - (cardStats.weak/2)) / 5))
+  for (let i = 0; i < cutes; i++) {
+    arrCute.push(<img src="/cute.png" alt=""></img>);
+  }
+
   return (
     <div className={styles.card}>
       {/* details */}
@@ -67,15 +74,18 @@ const PokemonCard = ({ card, addCard, removeCard, added }) => {
         </div>
 
         <div className={styles.emotions}>
-          <p>{((cardStats.hp/10) + (cardStats.dmg/10) + 10 - cardStats.weak) / 5}</p>
+          {arrCute.map((c, i) => <div key={i}>{c}</div>)}
         </div>
         
       </div>
       
       {/* Add button */}
+
       <h3 className={styles.detailBtn} onClick={added ? handleRemovCard : handleAddCard} >
         {added ? 'Remove' : 'Add'}
       </h3>
+
+      
     </div>
   )
 }

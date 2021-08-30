@@ -7,7 +7,7 @@
   box-shadow: 0px 4px 4px 1px gray;
 }
 .card > img {
-  width: 200px;
+  width: 170px;
   height: 250px;
 }
 
@@ -30,22 +30,28 @@
   height: 50px;
   width: 300px;
 }
+.cardMeters > meter::-webkit-meter-optimum-value {
+  background-color: #f3701a;
+}
 .cardSm > meter {
   height: 30px;
   width: 150px;
+  -webkit-meter-bar: red;
 }
-
-.detailBtn {
+.cardSm > meter::-webkit-meter-optimum-value {
+  background-color: #f3701a;
+}
+.detailBtn{
   margin-left: auto;
   margin-right: 20px;
   cursor: pointer;
-  display: absolute;
+  height: 5%;
 }
-
 .emotions {
   display: flex;
 }
 
-.emotions > img {
-  width: 45px;
+.emotions img {
+  width: 30px;
+  margin-right: 4px;
 }

@@ -52,13 +52,15 @@ const Pokedex = () => {
       id="over"
       >
       {overlay 
-        ? <div className="pokeMenu">
-            <input type="text" 
-            placeholder="Find pokemon" 
-            className={styles.searchPokemon} 
-            onChange={handleCardSearch}
-            ref={searchInput}
-            />
+        ? <div className={styles.pokeMenu}>
+            <div className={styles.searchWrapper}>
+              <input type="text" 
+              placeholder="Find pokemon" 
+              className={styles.searchPokemon} 
+              onChange={handleCardSearch}
+              ref={searchInput}
+              />
+            </div>
             <div className={styles.pokemonList}>
               {matchingCards.map(card => {
                 return <PokemonCard card={card} addCard={addCard} key={card.id}/>
