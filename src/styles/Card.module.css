@@ -47,10 +47,12 @@
 }
 .cardTitle {
   display: flex;
+  align-items: center;
 }
 .detailBtn{
   cursor: pointer;
-  margin-left: auto;
+  margin: 0 0 0 auto;
+  /* display: none; */
 }
 .emotions {
   display: flex;

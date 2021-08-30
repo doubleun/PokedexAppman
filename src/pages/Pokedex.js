@@ -85,7 +85,7 @@ const Pokedex = () => {
         className={styles.addBtn}
         onClick={() => setOverlay(true)}
         >
-          add
+          <img src="/add.svg" alt="" />
         </button>
       </div>
     </div>

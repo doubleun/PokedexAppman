@@ -59,9 +59,9 @@ const PokemonCard = ({ card, addCard, removeCard, added }) => {
       <div className={styles.cardDetails}>
         <div className={styles.cardTitle}>
           <h2>{card.name}</h2>
-          <h3 className={styles.detailBtn} onClick={added ? handleRemovCard : handleAddCard} >
-            {added ? 'Remove' : 'Add'}
-          </h3>
+          <div className={styles.detailBtn} onClick={added ? handleRemovCard : handleAddCard} >
+            {added ? <img src="/close.svg" alt="" /> : <h2>Add</h2>}
+          </div>
         </div>
         
         <div className={added ? styles.cardSm : styles.cardMeters}>
