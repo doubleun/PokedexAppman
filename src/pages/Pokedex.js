@@ -72,10 +72,12 @@ const Pokedex = () => {
       </div>
 
       {/* Display pokemon on the main page */}
-      <div className={styles.selectedGrid}>
-        {selectedCards && selectedCards.map(card => {
-         return  <PokemonCard card={card} key={card.id} removeCard={removeCard} added/>
-        })}
+      <div className={styles.selectedGridWrapper}>
+        <div className={styles.selectedGrid}>
+          {selectedCards && selectedCards.map(card => {
+          return  <PokemonCard card={card} key={card.id} removeCard={removeCard} added/>
+          })}
+        </div>
       </div>
         
       <div className={styles.footer}>

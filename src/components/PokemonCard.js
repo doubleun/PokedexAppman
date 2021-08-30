@@ -57,7 +57,13 @@ const PokemonCard = ({ card, addCard, removeCard, added }) => {
       {/* details */}
       <img src={card.imageUrl} alt="" />
       <div className={styles.cardDetails}>
-        <h2>{card.name}</h2>
+        <div className={styles.cardTitle}>
+          <h2>{card.name}</h2>
+          <h3 className={styles.detailBtn} onClick={added ? handleRemovCard : handleAddCard} >
+            {added ? 'Remove' : 'Add'}
+          </h3>
+        </div>
+        
         <div className={added ? styles.cardSm : styles.cardMeters}>
           <h4>HP</h4>
           <meter max={100} min={0} value={cardStats.hp}></meter>
@@ -78,14 +84,6 @@ const PokemonCard = ({ card, addCard, removeCard, added }) => {
         </div>
         
       </div>
-      
-      {/* Add button */}
-
-      <h3 className={styles.detailBtn} onClick={added ? handleRemovCard : handleAddCard} >
-        {added ? 'Remove' : 'Add'}
-      </h3>
-
-      
     </div>
   )
 }
